@@ -9,11 +9,17 @@ function checkSID() {
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
+  if (!/^[0-9]+$/.test(candi)) {
     return false;
-  } else {
-    return true;
   }
+
+	let num = parseInt(candi);
+
+	if(num >= 1 && num <= 10){
+		return true;
+  	} else {
+    	return false;
+  	}
 }
 
 function validateForm(){
